@@ -1,0 +1,5 @@
+/.coverage
+/.coverage.*
+/.python-version
+/dist/
+__pycache__/
