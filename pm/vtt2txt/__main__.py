@@ -5,7 +5,9 @@ from . import vtt_to_text
 
 
 def main():
-    parser = ArgumentParser()
+    parser = ArgumentParser(
+        description="Create plain text output from VTT file."
+    )
     parser.add_argument('vtt_file', type=Path)
     args = parser.parse_args()
     print(vtt_to_text(args.vtt_file.read_text()))

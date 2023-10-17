@@ -16,7 +16,20 @@ def rewrap(text):
     current_sentence = []
     for line in text.splitlines():
         line = line.strip()
-        current_sentence.append(line)
+        line_sections = []
+        for item in SENTENCE_END_RE.split(line):
+            if line_sections and item.startswith((".", "?", "!")):
+                line_sections[-1] += item
+            else:
+                line_sections.append(item)
+        match line_sections:
+            case [continued]:
+                current_sentence.append(continued)
+            case [continued, *other_sentences, new_sentence]:
+                current_sentence.append(continued)
+                sentences.append(" ".join(current_sentence))
+                sentences.extend(other_sentences)
+                current_sentence = [new_sentence]
         if line.endswith((".", "?", "!")):
             sentences.append(" ".join(current_sentence))
             current_sentence = []
