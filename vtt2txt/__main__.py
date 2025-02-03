@@ -1,3 +1,6 @@
+from argparse import ArgumentParser
+from pathlib import Path
+
 import re
 
 
@@ -60,3 +63,15 @@ def just_text(vtt_text):
 def vtt_to_text(vtt_text):
     """Convert VTT file text to plain text"""
     return rewrap("\n".join(just_text(vtt_text)))
+
+def main():
+    parser = ArgumentParser(
+        description="Create plain text output from VTT file."
+    )
+    parser.add_argument('vtt_file', type=Path)
+    args = parser.parse_args()
+    print(vtt_to_text(args.vtt_file.read_text()))
+
+
+if __name__ == "__main__":
+    main()
