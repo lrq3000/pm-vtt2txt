@@ -37,6 +37,9 @@ vtt2txt = "pm.vtt2txt.__main__:main"
 [tool.hatch.version]
 path = "pm/vtt2txt/__about__.py"
 
+[tool.hatch.build.targets.wheel]
+packages = ["pm/vtt2txt"]
+
 [tool.hatch.envs.default]
 dependencies = [
   "pytest",
