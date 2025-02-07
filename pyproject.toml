@@ -3,14 +3,15 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pm-vtt2txt"
-description = 'Convert VTT file to plain text file'
+name = "vtt2txt-ng"
+description = 'Convert VTT subtitles file to a plain text file'
 readme = "README.md"
 requires-python = ">=3.7"
 license = "MIT"
 keywords = []
 authors = [
-  { name = "Trey Hunner", email = "trey@treyhunner.com" },
+  { name = "Stephen Karl Larroque", email = "lrq3000@gmail.com",
+    name = "Trey Hunner", email = "trey@treyhunner.com" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -28,9 +29,9 @@ dependencies = []
 dynamic = ["version"]
 
 [project.urls]
-Documentation = "https://github.com/TruthfulTechnology/pm-vtt2txt#readme"
-Issues = "https://github.com/TruthfulTechnology/pm-vtt2txt/issues"
-Source = "https://github.com/TruthfulTechnology/pm-vtt2txt"
+Documentation = "https://github.com/lrq3000/vtt2txt-ng#readme"
+Issues = "https://github.com/lrq3000/vtt2txt-ng/issues"
+Source = "https://github.com/lrq3000/vtt2txt-ng"
 
 [project.scripts]
 vtt2txt = "vtt2txt.__main__:main"
